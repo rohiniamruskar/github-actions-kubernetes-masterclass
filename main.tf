@@ -1,4 +1,4 @@
-loacls{
+locals { 
     env = {
         dev = {
             instance_count = 1
