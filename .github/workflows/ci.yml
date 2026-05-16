@@ -28,7 +28,7 @@ jobs:
           else
             echo "DOCKERHUB_TOKEN exists"
           fi
-             echo "DEPLOY_ENABLED=${{ vars.DEPLOY_ENABLED }}"
+          
 
 
 
