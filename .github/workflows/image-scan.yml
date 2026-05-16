@@ -1,8 +1,7 @@
 name: Image Scanner
 
 on:
-  push:
-    branches: [main]
+  workflow_call:
 
 jobs:
 
