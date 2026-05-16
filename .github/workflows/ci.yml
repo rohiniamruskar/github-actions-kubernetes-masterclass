@@ -21,6 +21,11 @@ jobs:
              echo "DOCKERHUB_USERNAME is EMPTY"
           else
              echo "DOCKERHUB_USERNAME exists"
+
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "DOCKERHUB_TOKEN is EMPTY"
+          else
+            echo "DOCKERHUB_TOKEN exists"
           fi
              echo "DEPLOY_ENABLED=${{ vars.DEPLOY_ENABLED }}"
 
