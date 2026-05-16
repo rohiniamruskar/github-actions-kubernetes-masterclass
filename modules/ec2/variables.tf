@@ -39,6 +39,11 @@ variable "ec2_instance_count" {
   
 }
 
+variable "ssh_key_path" {
+  description = "Path to the SSH private key on the Ansible control node"
+  type        = string
+  default     = "/home/ubuntu/keys/three-tier-app-key"
+}
 
 variable "env" {
  description = "This variable holds the enviroment"

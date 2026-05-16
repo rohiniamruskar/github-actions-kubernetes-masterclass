@@ -65,6 +65,7 @@ resource "aws_instance" "my_instance" {
   key_name = aws_key_pair.my-key-pair.key_name   # key pair
 
   vpc_security_group_ids = [aws_security_group.my_security_group.id]   # VPC and security group
+  associate_public_ip_address = true
 
   # root storage (EBS)
 
