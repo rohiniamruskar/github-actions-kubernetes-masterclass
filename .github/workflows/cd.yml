@@ -18,6 +18,19 @@ jobs:
            else
              echo "EC2_HOST exists"
            fi
+
+           if [ -z "${{ secrets.EC2_USER }}" ]; then
+              echo "EC2_USER EMPTY"
+           else
+              echo "EC2_USER EXISTS"
+           fi
+
+           if [ -z "${{ secrets.EC2_SSH_KEY }}" ]; then
+              echo "EC2_SSH_KEY EMPTY"
+           else
+              echo "EC2_SSH_KEY EXISTS"
+           fi
+
       - uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
