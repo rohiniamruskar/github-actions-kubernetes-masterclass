@@ -7,7 +7,7 @@ on:
       - 'k8s/**'
       - 'docs/**'
       - '**/*.md'
-
+:wq!
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -15,9 +15,24 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: docker/setup-buildx-action@v4
+      - name: Debug secrets
+       run: |
+         if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
+             echo "DOCKERHUB_USERNAME is EMPTY"
+        else
+             echo "DOCKERHUB_USERNAME exists"
+        fi
+
+       if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "DOCKERHUB_TOKEN is EMPTY"
+       else
+            echo "DOCKERHUB_TOKEN exists"
+       fi
+
+       echo "DEPLOY_ENABLED=${{ vars.DEPLOY_ENABLED }}"
 
       - uses: docker/login-action@v4
-        #if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+        if: ${{ vars.DEPLOY_ENABLED == 'true' }}
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
