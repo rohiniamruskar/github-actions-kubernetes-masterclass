@@ -7,7 +7,7 @@ on:
       - 'k8s/**'
       - 'docs/**'
       - '**/*.md'
-:wq!
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
