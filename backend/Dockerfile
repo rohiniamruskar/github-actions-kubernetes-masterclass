@@ -22,7 +22,7 @@
 
 
 # Stage 1: Build
-FROM golang:1.26-alpine AS builder
+FROM golang:1.26-alpine3.23 AS builder
 
 WORKDIR /app
 
@@ -40,7 +40,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build \
     -o skillpulse .
 
 # Stage 2: Minimal Runtime
-FROM gcr.io/distroless/static-debian12
+FROM gcr.io/distroless/static-debian12:latest
 
 WORKDIR /app
 
