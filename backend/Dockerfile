@@ -40,7 +40,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build \
     -o skillpulse .
 
 # Stage 2: Minimal Runtime
-FROM gcr.io/distroless/static-debian12:latest
+FROM gcr.io/distroless/static-debian12:nonroot
 
 WORKDIR /app
 
