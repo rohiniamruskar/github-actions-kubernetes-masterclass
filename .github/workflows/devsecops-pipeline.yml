@@ -31,4 +31,4 @@ jobs:
     deploy:
         needs: [trivy]
         uses: ./.github/workflows/cd.yml
-        secrets: inheriti
+        secrets: inherit
