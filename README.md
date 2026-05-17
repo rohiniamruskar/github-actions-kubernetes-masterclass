@@ -1,4 +1,4 @@
-# SkillPulse — DevOps & Observability Platform
+# SkillPulse — DevOps, DevSecOps & Observability Platform
 
 ## Overview
 
@@ -68,8 +68,50 @@ The project demonstrates:
 - Centralized logging
 - OpenTelemetry integration
 - Kubernetes-ready architecture
+- Infrastructure provisioning with Terraform
+- Server configuration management with Ansible
 
 ---
+
+## DevSecOps Features
+
+- Docker image scanning
+- Secret scanning
+- Secure CI/CD workflows
+- Git ignore for sensitive files
+- Environment variable management
+- Optimized and secure container images
+
+---
+
+# Automation
+
+Implemented shell scripting automation for:
+
+- Docker installation
+- Kind Kubernetes cluster setup
+---
+
+# Infrastructure Automation
+
+## Terraform
+
+Terraform is used for:
+
+- Infrastructure provisioning
+- EC2 instance creation
+- Networking setup concepts
+- Multi-environment deployment structure
+
+## Ansible
+
+Ansible is used for:
+
+- Server configuration management
+- Make installation automation
+- kubctl installation
+- Environment setup automation
+
 
 # CI/CD Pipeline
 
@@ -233,10 +275,8 @@ container_memory_usage_bytes
 ## OTEL Spans
 
 ```promql
-otelcol_receiver_accepted_spans
+test_requests_total
 ```
-
----
 
 # Screenshots
 
