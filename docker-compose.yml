@@ -14,6 +14,7 @@ services:
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - skillpulse
+      - monitoring
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -25,8 +26,12 @@ services:
     image: ${DOCKERHUB_USERNAME}/skillpulse-backend:latest
     build: ./backend
     restart: unless-stopped
+    ports:
+    - "8080:8080"
     networks:
       - skillpulse
+      - monitoring
+
     environment:
       DB_HOST: db
       DB_PORT: "3306"
@@ -45,6 +50,7 @@ services:
     restart: unless-stopped
     networks:
       - skillpulse
+      - monitoring
     ports:
       - "80:80"
     depends_on:
@@ -55,3 +61,5 @@ volumes:
 
 networks:
   skillpulse:
+  monitoring:
+    external: true
