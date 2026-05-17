@@ -28,4 +28,5 @@ docs/skillpulse-kubernetes-guide.html
 .terraform.lock.hcl
 terraform.tfstate.d
 three-tier-app-key
-three-tier-app-key.pub
+*.pub
+*.pem
