@@ -26,6 +26,9 @@ services:
     volumes:
       - prometheus_data:/prometheus
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./alert-rules.yml:/etc/prometheus/alert-rules.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
       - monitoring
     restart: unless-stopped
@@ -98,8 +101,7 @@ services:
     ports:
       - "4317:4317"
       - "4318:4318"
-    expose:
-      - 8889
+      - "8889:8889"
     networks:
       - monitoring
     restart: unless-stopped
