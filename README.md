@@ -279,31 +279,14 @@ test_requests_total
 ## Grafana Dashboard
 
 ![Grafana Dashboard](images/grafana-dashboard.png)
-
-## Prometheus Targets
-
-![Prometheus Targets](images/prometheus-targets.png)
-
-## Loki Logs
-
-![Loki Logs](images/loki-logs.png)
-
-## GitHub Actions Pipeline
-
-![GitHub Actions](images/github-actions.png)
-
 ---
 
 # Future Improvements
 
-- Terraform infrastructure provisioning
 - EKS deployment
 - Helm charts
 - ArgoCD GitOps
-- Alertmanager integration
 - Horizontal scaling
-- Multi-environment deployments
-
 ---
 
 # Learning Outcomes
