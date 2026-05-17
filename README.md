@@ -198,8 +198,6 @@ Collects Docker container logs and forwards them to Loki.
 
 ---
 
----
-
 # Kubernetes
 
 Implemented local Kubernetes cluster using Kind with:
@@ -240,8 +238,6 @@ docker compose up -d
 cd observability
 docker compose up -d
 ```
-
----
 
 # Access Services
 
